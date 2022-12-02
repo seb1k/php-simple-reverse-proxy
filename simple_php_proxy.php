@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 
 
 
-$ip ="IP.REAL.SERVER.HERE"; // 1.2.3.4
+$ip = "IP.REAL.SERVER.HERE"; // 1.2.3.4
 
 
 
@@ -21,9 +21,9 @@ $file =  substr($_SERVER['REQUEST_URI'], 1); /// ressource asked without '/' at 
 
 
 $ret = grab_url($ip,$domain,$file);
-$url_data=$ret[0];
-$url_code=$ret[1];
-$url_header=$ret[2];
+$url_data = $ret[0];
+$url_code = $ret[1];
+$url_header = $ret[2];
 
 
 
@@ -57,8 +57,7 @@ $handle = fopen( "http://$IP/$REQUEST_URI", 'r', false, $context );
 $ret = stream_get_contents($handle);
 
 $code=false;
-if(is_array($http_response_header))
-	{
+if(is_array($http_response_header)) {
 	$parts=explode(' ',$http_response_header[0]);
 	if(count($parts)>1) //HTTP/1.0 <code> <text>
 		$code = intval($parts[1]); //Get code
@@ -71,8 +70,7 @@ return [$ret,$code,$http_response_header];
 
 function copy_header($url_header)
 {
-for($i=0;$i<count($url_header);$i++)
-	{
+for($i=0;$i<count($url_header);$i++) {
 	$str=$url_header[$i];
 	header($str);
 	}
