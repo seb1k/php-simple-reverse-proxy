@@ -5,5 +5,5 @@ Just change the IP address in the first lines, and it should be ready to use wit
 ```
 RewriteEngine on
 ### YOUR RULES
-RewriteRule . simple_php_proxy.php [L]
+RewriteRule . reverse_proxy.php [L]
 ```
