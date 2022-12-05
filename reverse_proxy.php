@@ -16,7 +16,7 @@ $ip = "IP.REAL.SERVER.HERE"; // 1.2.3.4
 
 
 
-$domain=$_SERVER['HTTP_HOST'];
+$domain = $_SERVER['HTTP_HOST'];
 $file =  substr($_SERVER['REQUEST_URI'], 1); /// ressource asked without '/' at the beginning
 
 
@@ -28,8 +28,7 @@ $url_header = $ret[2];
 
 
 
-if ($url_code === FALSE)
-	{
+if ($url_code === FALSE) {
 	http_response_code(500);
 	die("REQUEST ERROR : $url_code");
 	}
@@ -56,7 +55,7 @@ $handle = fopen( "http://$IP/$REQUEST_URI", 'r', false, $context );
 
 $ret = stream_get_contents($handle);
 
-$code=false;
+$code = false;
 if(is_array($http_response_header)) {
 	$parts=explode(' ',$http_response_header[0]);
 	if(count($parts)>1) //HTTP/1.0 <code> <text>
