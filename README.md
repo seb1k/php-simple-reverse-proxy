@@ -1,4 +1,4 @@
-A php proxy in 1 file with a minimum of dependency.
+A php reverse proxy in 1 file with a minimum of dependency.
 
 Just change the IP address in the first lines, and it should be ready to use with a rewrite:
 
